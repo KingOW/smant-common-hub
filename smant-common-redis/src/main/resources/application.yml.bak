@@ -1,0 +1,29 @@
+spring:
+  data:
+    redis:
+#      host: 172.16.239.35
+#      port: 6379
+      password: Ryds@2023...
+      client-type: jedis
+      cluster:
+        max-redirects: 3
+        nodes: 172.16.239.35:6379
+      jedis:
+        pool:
+          enabled: true
+          max-idle: 10
+          max-active: 20
+          min-idle: 0
+          max-wait: 100
+          time-between-eviction-runs:
+      lettuce:
+        pool:
+          enabled: true
+          max-idle: 10
+          max-active: 20
+          min-idle: 0
+          max-wait: 100
+          time-between-eviction-runs:
+
+
+
