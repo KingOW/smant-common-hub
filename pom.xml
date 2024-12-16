@@ -24,5 +24,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+<build>
+    <plugins>
 
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${org.apache.maven.compiler.plugin.version}</version>
+        <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+            <compilerVersion>23</compilerVersion>
+        </configuration>
+    </plugin>
+    </plugins>
+</build>
 </project>

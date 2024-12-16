@@ -2,11 +2,9 @@ package com.smant.common.core.beans;
 
 import com.smant.common.core.constants.RCode;
 import com.smant.common.core.enums.DefRCode;
-import lombok.Data;
 
 import java.io.Serializable;
 
-@Data
 public class ObjR<T extends Serializable> extends R{
 
     public static final ObjR<String> DEFAULT_SUCCESS_OBJR = new ObjR(DefRCode.SUCCESS,"");
@@ -23,5 +21,13 @@ public class ObjR<T extends Serializable> extends R{
 
     public ObjR(RCode rCode,T data) {
         this(rCode.getCode(),rCode.getMsg(),data);
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }

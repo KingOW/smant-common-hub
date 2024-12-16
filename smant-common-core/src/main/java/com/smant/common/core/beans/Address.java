@@ -2,15 +2,12 @@ package com.smant.common.core.beans;
 
 import com.smant.common.core.enums.AddressType;
 import com.smant.common.core.utils.StringExtUtils;
-import lombok.Data;
 
-import javax.swing.*;
 import java.io.Serializable;
 
 /**
  * 位置对象
  */
-@Data
 public class Address implements Serializable {
 
     /**
@@ -173,5 +170,157 @@ public class Address implements Serializable {
         }
         this.address = strBuilder.toString();
         return this;
+    }
+
+    public String getAddressTag() {
+        return addressTag;
+    }
+
+    public void setAddressTag(String addressTag) {
+        this.addressTag = addressTag;
+    }
+
+    public String getAddressTypeName() {
+        return addressTypeName;
+    }
+
+    public void setAddressTypeName(String addressTypeName) {
+        this.addressTypeName = addressTypeName;
+    }
+
+    public String getAddressTypeCode() {
+        return addressTypeCode;
+    }
+
+    public void setAddressTypeCode(String addressTypeCode) {
+        this.addressTypeCode = addressTypeCode;
+    }
+
+    public String getFullAddress() {
+        return fullAddress;
+    }
+
+    public void setFullAddress(String fullAddress) {
+        this.fullAddress = fullAddress;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    public String getStreetCode() {
+        return streetCode;
+    }
+
+    public void setStreetCode(String streetCode) {
+        this.streetCode = streetCode;
+    }
+
+    public String getVillageName() {
+        return villageName;
+    }
+
+    public void setVillageName(String villageName) {
+        this.villageName = villageName;
+    }
+
+    public String getVillageCode() {
+        return villageCode;
+    }
+
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
+    }
+
+    public String getTownName() {
+        return townName;
+    }
+
+    public void setTownName(String townName) {
+        this.townName = townName;
+    }
+
+    public String getTownCode() {
+        return townCode;
+    }
+
+    public void setTownCode(String townCode) {
+        this.townCode = townCode;
+    }
+
+    public String getAreaName() {
+        return areaName;
+    }
+
+    public void setAreaName(String areaName) {
+        this.areaName = areaName;
+    }
+
+    public String getAreaCode() {
+        return areaCode;
+    }
+
+    public void setAreaCode(String areaCode) {
+        this.areaCode = areaCode;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getCityCode() {
+        return cityCode;
+    }
+
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
+    }
+
+    public String getProvinceName() {
+        return provinceName;
+    }
+
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
+    }
+
+    public String getProvinceCode() {
+        return provinceCode;
+    }
+
+    public void setProvinceCode(String provinceCode) {
+        this.provinceCode = provinceCode;
+    }
+
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 }

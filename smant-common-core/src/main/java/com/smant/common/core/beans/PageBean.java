@@ -1,13 +1,7 @@
 package com.smant.common.core.beans;
 
-import lombok.Data;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.io.Serializable;
 
-@Data
 public class PageBean implements Serializable {
 
     private int pageNo = 1;//页码
@@ -32,9 +26,38 @@ public class PageBean implements Serializable {
         this.startIndex = (this.pageNo - 1) * pageSize;
         this.endIndex = startIndex + (pageSize - 1);
     }
-//
-//    public static ScriptEngine jsegn = new ScriptEngineManager().getEngineByName("JavaScript");
-//
+
+    public int getPageNo() {
+        return pageNo;
+    }
+
+    public void setPageNo(int pageNo) {
+        this.pageNo = pageNo;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public int getStartIndex() {
+        return startIndex;
+    }
+
+    public void setStartIndex(int startIndex) {
+        this.startIndex = startIndex;
+    }
+
+    public int getEndIndex() {
+        return endIndex;
+    }
+
+    public void setEndIndex(int endIndex) {
+        this.endIndex = endIndex;
+    }
 //    public static void main(String[] args) throws ScriptException {
 //        String a = "\"0.75\"-\"0.05\"-0";
 //        System.out.println(jsegn.eval(a));

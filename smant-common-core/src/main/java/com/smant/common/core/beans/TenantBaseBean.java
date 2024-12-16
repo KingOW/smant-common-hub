@@ -1,11 +1,9 @@
 package com.smant.common.core.beans;
 
-import lombok.Data;
 
 /**
  * 租户 基础Bean
  */
-@Data
 public class TenantBaseBean extends BaseBean{
 
     /**
@@ -14,4 +12,28 @@ public class TenantBaseBean extends BaseBean{
     private String tenantId;
     private String tenantCode;
     private String tenantName;
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public String getTenantCode() {
+        return tenantCode;
+    }
+
+    public void setTenantCode(String tenantCode) {
+        this.tenantCode = tenantCode;
+    }
+
+    public String getTenantName() {
+        return tenantName;
+    }
+
+    public void setTenantName(String tenantName) {
+        this.tenantName = tenantName;
+    }
 }

@@ -5,17 +5,14 @@ import com.smant.common.core.constants.CommConstants;
 import com.smant.common.core.constants.RCode;
 import com.smant.common.core.enums.DefRCode;
 import com.smant.common.core.utils.StringExtUtils;
-import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Map;
 
 /**
  * 运行结果
  *
  */
-@Data
 public class R implements Serializable {
 
     private int code;//操作结果编码
@@ -125,14 +122,44 @@ public class R implements Serializable {
         }
         return CommConstants.BOOLEAN_FALSE;
     }
-//
-//    public static void main(String[] args) {
-//        Map<String, String> m = Maps.newHashMap();
-////        m.put("1", "2");
-//        List<String> aaa = Lists.newArrayList();
-//        aaa.add("1");
-//        aaa.add("2");
-//        R<List<String>> a = new R<>(200, "sss", aaa);
-//        System.out.println(a.toString());
-//    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public Map<String, Object> getProps() {
+        return props;
+    }
+
+    public void setProps(Map<String, Object> props) {
+        this.props = props;
+    }
 }

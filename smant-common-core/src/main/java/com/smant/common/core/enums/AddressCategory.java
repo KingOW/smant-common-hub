@@ -1,13 +1,9 @@
 package com.smant.common.core.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 /**
  * 分类
  */
-@AllArgsConstructor
-@Getter
 public enum AddressCategory {
     NATION("N", "国家", "国家"),
     PROVINCE("P", "省", "省"),
@@ -21,4 +17,22 @@ public enum AddressCategory {
     private final String code;
     private final String name;
     private final String desc;
+
+    AddressCategory(String code, String name, String desc) {
+        this.code = code;
+        this.name = name;
+        this.desc = desc;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 }

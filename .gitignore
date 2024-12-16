@@ -3,3 +3,4 @@
 /smant-common-kafka/target/
 /smant-common-redis/target/
 /smant-common-security/target/
+/.idea/

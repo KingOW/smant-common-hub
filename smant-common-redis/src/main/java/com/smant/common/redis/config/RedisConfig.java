@@ -3,18 +3,16 @@ package com.smant.common.redis.config;
 import com.smant.common.core.utils.StringExtUtils;
 import com.smant.common.redis.serializer.FastJson2JsonRedisSerializer;
 import io.lettuce.core.ReadFrom;
-import io.lettuce.core.resource.DefaultClientResources;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -24,14 +22,12 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
-import java.util.concurrent.TimeUnit;
 
 
 @Configuration
-@Slf4j
 public class RedisConfig {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(RedisConfig.class);
     private static final String SPRING_REDIS_CLIENT_JEDIS = "jedis";
     private static final String SPRING_REDIS_CLIENT_LETTUCE = "lettuce";
 
@@ -67,7 +63,7 @@ public class RedisConfig {
     @Bean(value = "redisConnectionFactory")
     @ConditionalOnProperty(value = "spring.data.redis.client-type", havingValue = SPRING_REDIS_CLIENT_LETTUCE)
     public RedisConnectionFactory lettuceConnectionFactory() {
-        log.info("构建 LettuceConnectionFactory");
+        LOGGER.info("构建 LettuceConnectionFactory");
         RedisStandaloneConfiguration redisConfiguration = new RedisStandaloneConfiguration(host, port);
         if (!StringExtUtils.isEmpty(username)) {
             redisConfiguration.setUsername(username);
@@ -80,7 +76,7 @@ public class RedisConfig {
         poolConfig.setMinIdle(lettuceMinIdle);
         poolConfig.setMaxWait(Duration.of(lettuceMaxWait, ChronoUnit.MILLIS));
         poolConfig.setMaxTotal(lettuceMaxActive);
-        log.info("配置连接池");
+        LOGGER.info("配置连接池");
         LettucePoolingClientConfiguration lettucePoolingClientConfig = LettucePoolingClientConfiguration.builder().poolConfig(poolConfig).readFrom(ReadFrom.MASTER_PREFERRED)
                 .commandTimeout(Duration.of(10000, ChronoUnit.MILLIS)) // 设置命令超时时间（毫秒）
                 .shutdownTimeout(Duration.of(50000, ChronoUnit.MILLIS)) // 设置关闭超时时间（毫秒）
@@ -97,7 +93,7 @@ public class RedisConfig {
     @Bean(value = "redisConnectionFactory")
     @ConditionalOnProperty(value = "spring.data.redis.client-type", havingValue = SPRING_REDIS_CLIENT_JEDIS)
     public RedisConnectionFactory jedisConnectionFactory() {
-        log.info("构建 JedisConnectionFactory");
+        LOGGER.info("构建 JedisConnectionFactory");
         return new JedisConnectionFactory();
     }
 

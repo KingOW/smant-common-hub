@@ -1,11 +1,9 @@
 package com.smant.common.core.enums;
 
-import lombok.Getter;
 
 /**
  * 字典数据类型
  */
-@Getter
 public enum DictDataCategory {
     DATA_TYPE_LONG(1,"整型类型"),
     DATA_TYPE_DOUBLE(2,"小数类型"),
@@ -29,5 +27,13 @@ public enum DictDataCategory {
             if (dataCategory.code == code) return dataCategory;
         }
         return DATA_TYPE_LONG;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCode() {
+        return code;
     }
 }
