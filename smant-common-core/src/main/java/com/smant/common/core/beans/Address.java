@@ -4,7 +4,6 @@ import com.smant.common.core.enums.AddressType;
 import com.smant.common.core.utils.StringExtUtils;
 import lombok.Data;
 
-import javax.swing.*;
 import java.io.Serializable;
 
 /**

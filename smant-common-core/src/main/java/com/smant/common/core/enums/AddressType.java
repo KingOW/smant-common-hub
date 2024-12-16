@@ -1,6 +1,5 @@
 package com.smant.common.core.enums;
 
-import com.smant.common.core.beans.Address;
 import com.smant.common.core.utils.StringExtUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

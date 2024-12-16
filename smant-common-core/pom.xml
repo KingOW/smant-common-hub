@@ -8,14 +8,8 @@
         <artifactId>smant-common-hub</artifactId>
         <version>2024.07.01-SNAPSHOT</version>
     </parent>
-
     <artifactId>smant-common-core</artifactId>
-
-    <properties>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -56,5 +50,4 @@
             <artifactId>spring-web</artifactId>
         </dependency>
     </dependencies>
-
 </project>
