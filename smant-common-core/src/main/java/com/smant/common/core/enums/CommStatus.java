@@ -1,11 +1,9 @@
 package com.smant.common.core.enums;
 
-import lombok.Getter;
 
 /**
  * 通用状态
  */
-@Getter
 public enum CommStatus {
     INITIALIZE(1, "初始化", "初始化:类似草稿状态，启用前的准备状态"),
     ENABLE(2, "启用/有效", "启用/有效"),
@@ -31,5 +29,17 @@ public enum CommStatus {
             }
         }
         return null;
+    }
+
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    public String getStatusName() {
+        return statusName;
+    }
+
+    public String getStatusDesc() {
+        return statusDesc;
     }
 }

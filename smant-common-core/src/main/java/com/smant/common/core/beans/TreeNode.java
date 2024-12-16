@@ -2,8 +2,6 @@ package com.smant.common.core.beans;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
@@ -11,8 +9,6 @@ import java.util.Map;
 /**
  * 树形bean
  */
-@NoArgsConstructor
-@Data
 public class TreeNode extends BaseBean {
 
     public TreeNode(String id) {
@@ -131,5 +127,79 @@ public class TreeNode extends BaseBean {
     public TreeNode Remark(String remark) {
         this.setRemark(remark);
         return this;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
+    }
+
+    public String getPcode() {
+        return pcode;
+    }
+
+    public void setPcode(String pcode) {
+        this.pcode = pcode;
+    }
+
+    public String getPname() {
+        return pname;
+    }
+
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+
+    public List<TreeNode> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<TreeNode> children) {
+        this.children = children;
+    }
+
+    @Override
+    public String getRemark() {
+        return remark;
+    }
+
+    @Override
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Map<String, Object> getProps() {
+        return props;
+    }
+
+    public void setProps(Map<String, Object> props) {
+        this.props = props;
     }
 }
