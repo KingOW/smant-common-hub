@@ -1,6 +1,10 @@
 package com.smant.common.core.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
+@AllArgsConstructor
 public enum DatePattern {
     YYYY_MM_DD("YYYY-MM-DD"),
     YYYY_MM_DD_2("YYYYMMMDD"),
@@ -13,9 +17,6 @@ public enum DatePattern {
     ;
 
     private final String value;
-    DatePattern(String value){
-        this.value = value;
-    }
     public String getValue() {
         return this.value;
     }

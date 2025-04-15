@@ -1,9 +1,14 @@
 package com.smant.common.core.enums;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * 性别
  */
+@Getter
+@AllArgsConstructor
 public enum Gender {
 
     UNKNOWN(1, "未知", "未知"),
@@ -15,11 +20,7 @@ public enum Gender {
     private final String name;
     private final String desc;
 
-    Gender(int code, String name, String desc) {
-        this.code = code;
-        this.name = name;
-        this.desc = desc;
-    }
+
 
     private static final Gender[] ALL_VALUES = Gender.values();
 

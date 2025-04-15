@@ -1,7 +1,11 @@
 package com.smant.common.core.enums;
 
 import com.smant.common.core.constants.RCode;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
+@AllArgsConstructor
 public enum DefRCode implements RCode {
 
     SUCCESS(200,"操作成功","操作成功"),
@@ -14,12 +18,6 @@ public enum DefRCode implements RCode {
     private final String name;
     private final String msg;
 
-    DefRCode(int code, String name, String msg) {
-        this.code = code;
-        this.name = name;
-        this.msg = msg;
-    }
-    ;
 
     public String getName() {
         return name;
