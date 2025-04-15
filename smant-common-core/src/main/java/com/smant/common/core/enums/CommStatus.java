@@ -1,9 +1,14 @@
 package com.smant.common.core.enums;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * 通用状态
  */
+@Getter
+@AllArgsConstructor
 public enum CommStatus {
     INITIALIZE(1, "初始化", "初始化:类似草稿状态，启用前的准备状态"),
     ENABLE(2, "启用/有效", "启用/有效"),
@@ -15,11 +20,6 @@ public enum CommStatus {
     private final String statusName;
     private final String statusDesc;
 
-    CommStatus(int statusCode, String statusName, String statusDesc) {
-        this.statusCode = statusCode;
-        this.statusName = statusName;
-        this.statusDesc = statusDesc;
-    }
 
     private static final CommStatus[] ALL_VALUES = CommStatus.values();
     public static CommStatus commStatus(int statusCode){

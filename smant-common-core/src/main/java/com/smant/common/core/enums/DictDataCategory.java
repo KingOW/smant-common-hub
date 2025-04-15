@@ -1,9 +1,14 @@
 package com.smant.common.core.enums;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * 字典数据类型
  */
+@Getter
+@AllArgsConstructor
 public enum DictDataCategory {
     DATA_TYPE_LONG(1,"整型类型"),
     DATA_TYPE_DOUBLE(2,"小数类型"),
@@ -15,10 +20,6 @@ public enum DictDataCategory {
     private  final int  code;
     private final String name;
 
-    DictDataCategory(int code, String name) {
-        this.code = code;
-        this.name = name;
-    }
 
     private static final DictDataCategory[] ALL_VALUES = DictDataCategory.values();
 
