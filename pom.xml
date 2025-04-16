@@ -16,6 +16,8 @@
         <module>smant-common-kafka</module>
         <module>smant-common-redis</module>
         <module>smant-common-security</module>
+        <module>smant-common-mail</module>
+        <module>smant-common-sms</module>
     </modules>
 
     <properties>
