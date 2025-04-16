@@ -24,15 +24,23 @@
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <com.aliyun.alibabacloud.dysmsapi20180501.version>1.0.5</com.aliyun.alibabacloud.dysmsapi20180501.version>
     </properties>
 
+    <dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>alibabacloud-dysmsapi20180501</artifactId>
+            <version>${com.aliyun.alibabacloud.dysmsapi20180501.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.38</version>
         </dependency>
     </dependencies>
+    </dependencyManagement>
 <build>
     <plugins>
 
